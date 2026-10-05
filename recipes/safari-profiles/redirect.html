@@ -1,0 +1,19 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>Opening link…</title>
+<p id="msg">Opening link…</p>
+<script>
+  // The target URL arrives percent-encoded in the fragment, which never leaves
+  // the browser: http://work.finicky.test:48731/#https%3A%2F%2Fexample.com%2F
+  const msg = document.getElementById("msg");
+  try {
+    const target = new URL(decodeURIComponent(location.hash.slice(1)));
+    // Only plain web links, so this can't be used to run javascript: URLs.
+    if (target.protocol !== "http:" && target.protocol !== "https:") {
+      throw new Error("unsupported scheme " + target.protocol);
+    }
+    location.replace(target.href);
+  } catch (e) {
+    msg.textContent = "Could not open link: " + e.message;
+  }
+</script>
