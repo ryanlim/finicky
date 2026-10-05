@@ -78,6 +78,12 @@ Finicky has extensive support for matching, rewriting and starting browsers or o
 - The wiki has some good [configuration ideas](https://github.com/johnste/finicky/wiki/Configuration-ideas).
 - Visit [discussions](https://github.com/johnste/finicky/discussions) to discuss supporting specific apps.
 
+### Safari profiles
+
+Safari has no command-line option for choosing a profile. See
+[recipes/safari-profiles](recipes/safari-profiles/README.md) for a recipe that routes links
+to a profile through local hostnames.
+
 ## Migrating from Finicky 3
 
 Please see the [wiki page](https://github.com/johnste/finicky/wiki/Migrating-from-Finicky-3) for updating info and migrating your configuration
